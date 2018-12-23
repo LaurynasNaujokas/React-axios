@@ -11,3 +11,9 @@ li{
 
 }
 
+input{
+  width: 25%;
+  height: 25px;
+  text-align: center;
+  font-size: 1rem;
+}

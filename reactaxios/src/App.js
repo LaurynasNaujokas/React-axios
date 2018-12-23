@@ -5,6 +5,12 @@ import Axios from 'axios';
 const API = 'https://reqres.in/api/users';
 //const DEFAULT_QUERY = 'redux';
 
+function searchingFor(term){
+  return function(x){
+    return x.first_name.toLowerCase().includes(term.toLowerCase()) || !term;
+  };
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -13,10 +19,19 @@ class App extends Component {
       users: [],
       isLoading: false,
       error: null,
+      term: '',
     };
-    //eventHandler
+    this.searchHandler = this.searchHandler.bind(this);
   }
   
+
+searchHandler(e){
+    this.setState({
+      term : e.target.value 
+    });
+}
+
+
 
 componentDidMount(){
   this.setState({ isLoading: true});
@@ -33,7 +48,7 @@ componentDidMount(){
 }
 
   render() {
-    const {users, isLoading, error} = this.state;
+    const {users,term, isLoading, error} = this.state;
 
     if(error) {
       return <p>{error.message}</p>;
@@ -45,9 +60,15 @@ componentDidMount(){
 
     return (
       <div className="App">
+      <form>
+        <input type="text"
+          onChange={this.searchHandler}
+          value={term}
+        />
+      </form>
        <h1>Data</h1>
        <ul>
-        {users.map(user =>
+        {users.filter(searchingFor(this.state.term)).map(user =>
           <li key={user.id}>
               <h2>User {user.id}:</h2>
               <h3><strong>Name:</strong> {user.first_name} <br></br>  <strong>Last Name:</strong> {user.last_name}</h3> 
