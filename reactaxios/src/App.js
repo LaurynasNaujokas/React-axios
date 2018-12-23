@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Axios from 'axios';
+import 'bulma/css/bulma.css'
 
 const API = 'https://reqres.in/api/users';
 //const DEFAULT_QUERY = 'redux';
@@ -31,8 +32,6 @@ searchHandler(e){
     });
 }
 
-
-
 componentDidMount(){
   this.setState({ isLoading: true});
 
@@ -51,7 +50,7 @@ componentDidMount(){
     const {users,term, isLoading, error} = this.state;
 
     if(error) {
-      return <p>{error.message}</p>;
+      return <p className="p">{error.message}</p>;
     }
 
     if(isLoading) {
@@ -61,18 +60,20 @@ componentDidMount(){
     return (
       <div className="App">
       <form>
-        <input type="text"
+        <input type="text" className="input is-primary"
           onChange={this.searchHandler}
           value={term}
+          placeholder="Search for user"
         />
       </form>
-       <h1>Data</h1>
        <ul>
         {users.filter(searchingFor(this.state.term)).map(user =>
           <li key={user.id}>
               <h2>User {user.id}:</h2>
               <h3><strong>Name:</strong> {user.first_name} <br></br>  <strong>Last Name:</strong> {user.last_name}</h3> 
-              <img alt="avatar" src={user.avatar}></img>
+              <figure className="image is-128x128">
+                <img alt="avatar" className="is-rounded" src={user.avatar}></img>
+              </figure>
           </li>
           
         )}

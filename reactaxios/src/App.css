@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  margin: auto;
+  width: 15%;
+  padding: 10px;
 }
 
 strong{
@@ -7,13 +9,13 @@ strong{
 }
 
 li{
+  margin-top: 50px;
   text-decoration: none;
-
+  list-style: none;
 }
 
-input{
-  width: 25%;
-  height: 25px;
+.input.input.is-primary{
+  width: 100%;
   text-align: center;
-  font-size: 1rem;
+  margin-bottom: 40px;
 }
