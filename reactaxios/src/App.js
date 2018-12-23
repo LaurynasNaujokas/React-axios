@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Axios from 'axios';
 
-const API = 'https://jsonplaceholder.typicode.com/posts';
+const API = 'https://reqres.in/api/users';
 //const DEFAULT_QUERY = 'redux';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      posts: [],
+      users: [],
       isLoading: false,
       error: null,
     };
@@ -23,7 +23,7 @@ componentDidMount(){
 
   Axios.get(API)
   .then(result => this.setState({
-    posts: result.data,
+    users: result.data.data,
     isLoading: false
   }))
   .catch(error => this.setState({
@@ -33,7 +33,7 @@ componentDidMount(){
 }
 
   render() {
-    const {posts, isLoading, error} = this.state;
+    const {users, isLoading, error} = this.state;
 
     if(error) {
       return <p>{error.message}</p>;
@@ -47,10 +47,13 @@ componentDidMount(){
       <div className="App">
        <h1>Data</h1>
        <ul>
-        {posts.map(post =>
-          <li key={post.Id}>
-            <a href={post.title}>{post.body}</a>
+        {users.map(user =>
+          <li key={user.id}>
+              <h2>User {user.id}:</h2>
+              <h3><strong>Name:</strong> {user.first_name} <br></br>  <strong>Last Name:</strong> {user.last_name}</h3> 
+              <img alt="avatar" src={user.avatar}></img>
           </li>
+          
         )}
       </ul>
 
