@@ -63,7 +63,7 @@ componentDidMount(){
         <input type="text" className="input is-primary"
           onChange={this.searchHandler}
           value={term}
-          placeholder="Search for user"
+          placeholder="Search for user by name"
         />
       </form>
        <ul>
