@@ -56,7 +56,7 @@ componentDidMount(){
     if(isLoading) {
       return <p>Loading...</p>;
     }
-      //Bulma testing
+    
     return (
       <div className="App">
       <form>
@@ -78,7 +78,6 @@ componentDidMount(){
           </li>
         )}
       </ul>
-
       </div>
     );
   }
