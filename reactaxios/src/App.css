@@ -16,6 +16,8 @@ strong{
 li{
   text-decoration: none;
   list-style: none;
+  color: darkmagenta;
+  font-size: 1rem;
 }
 
 .input.input.is-primary{

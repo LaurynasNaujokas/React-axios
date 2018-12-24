@@ -56,7 +56,7 @@ componentDidMount(){
     if(isLoading) {
       return <p>Loading...</p>;
     }
-
+      //Bulma testing
     return (
       <div className="App">
       <form>
@@ -70,12 +70,12 @@ componentDidMount(){
         {users.filter(searchingFor(this.state.term)).map(user =>
           <li key={user.id}>
               <h2>User {user.id}:</h2>
-              <h3><strong>Name:</strong> {user.first_name} <br></br>  <strong>Last Name:</strong> {user.last_name}</h3> 
+              <h3><strong>Name:</strong> {user.first_name} <br></br>
+                <strong>Last Name:</strong> {user.last_name}</h3> 
               <figure className="image is-128x128">
                 <img alt="avatar" className="is-rounded" src={user.avatar}></img>
               </figure>
           </li>
-          
         )}
       </ul>
 
