@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar.js';
+import Footer from './Components/Footer.js';
 import Axios from 'axios';
 import 'bulma/css/bulma.css'
 
@@ -82,6 +83,10 @@ componentDidMount(){
         </div>
         )}
       </ul>
+
+      <div>
+        <Footer />
+      </div>
       </div>
     );
   }
