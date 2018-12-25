@@ -52,7 +52,7 @@ componentDidMount(){
     const { users,term, isLoading, error} = this.state;
 
     if(error) {
-      return <p className="p">{error.message}</p>;
+      return <p>{error.message}</p>;
     }
 
     if(isLoading) {
