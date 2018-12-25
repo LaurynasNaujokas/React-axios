@@ -8,6 +8,7 @@ import 'bulma/css/bulma.css'
 const API = 'https://reqres.in/api/users';
 //const DEFAULT_QUERY = 'redux';
 
+//Search function
 function searchingFor(term){
   return function(x){
     return x.first_name.toLowerCase().includes(term.toLowerCase()) || !term;
@@ -27,13 +28,14 @@ class App extends Component {
     this.searchHandler = this.searchHandler.bind(this);
   }
   
-
+// Setting state of term from user's input
 searchHandler(e){
     this.setState({
       term : e.target.value 
     });
 }
 
+// Fetching API with exios
 componentDidMount(){
   this.setState({ isLoading: true});
 
@@ -58,11 +60,15 @@ componentDidMount(){
     if(isLoading) {
       return <p>Loading...</p>;
     }
+
+    // Navbar component
     return (
       <div className="App">
       <div className="navbar-component">
       <Navbar />,
       </div>
+
+     {/* Input field */}
       <form>
         <input type="text" className="input is-primary"
           onChange={this.searchHandler}
@@ -71,6 +77,8 @@ componentDidMount(){
         />
       </form>
       
+
+    {/* //Filtering and displaying fetcehd information */}
        <ul>
         {users.filter(searchingFor(this.state.term)).map(user =>
         <div className="box">
@@ -86,10 +94,11 @@ componentDidMount(){
         )}
       </ul>
 
+
+          {/* Footer component */}
       <div className="footer-component">
         <Footer />
       </div>
-
       </div>
     );
   }
