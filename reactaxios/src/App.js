@@ -86,7 +86,7 @@ componentDidMount(){
         )}
       </ul>
 
-      <div>
+      <div className="footer-component">
         <Footer />
       </div>
 
