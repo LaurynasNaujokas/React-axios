@@ -69,7 +69,7 @@ componentDidMount(){
        <ul>
         {users.filter(searchingFor(this.state.term)).map(user =>
           <li key={user.id}>
-              <h2 className="title">User {user.id}:</h2>
+              <h2 className="title is-3">User {user.id}:</h2>
               <h3 className="subtitle"><strong>Name:</strong> {user.first_name} <br></br>
                 <strong>Last Name:</strong> {user.last_name}</h3> 
               <figure className="image is-128x128">
