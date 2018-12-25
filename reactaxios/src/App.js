@@ -60,7 +60,9 @@ componentDidMount(){
     }
     return (
       <div className="App">
+      <div className="navbar-component">
       <Navbar />,
+      </div>
       <form>
         <input type="text" className="input is-primary"
           onChange={this.searchHandler}
@@ -87,6 +89,7 @@ componentDidMount(){
       <div>
         <Footer />
       </div>
+
       </div>
     );
   }
