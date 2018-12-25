@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './Components/Navbar.js';
-import Footer from './Components/Footer.js';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import Axios from 'axios';
 import 'bulma/css/bulma.css'
 
