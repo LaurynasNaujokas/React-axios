@@ -1,7 +1,8 @@
 .App {
   margin: auto;
-  width: 20%;
+  width: 100%;
   padding: 10px;
+
 }
 
 strong{
@@ -18,6 +19,8 @@ li{
   list-style: none;
   color: royalblue;
   font-size: 1rem;
+  display: inline;
+  width: 30px;
 }
 
 .input.input.is-primary{

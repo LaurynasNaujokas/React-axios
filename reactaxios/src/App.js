@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from './Components/Navbar.js';
 import Axios from 'axios';
 import 'bulma/css/bulma.css'
 
@@ -47,7 +48,7 @@ componentDidMount(){
 }
 
   render() {
-    const {users,term, isLoading, error} = this.state;
+    const { users,term, isLoading, error} = this.state;
 
     if(error) {
       return <p className="p">{error.message}</p>;
@@ -56,9 +57,9 @@ componentDidMount(){
     if(isLoading) {
       return <p>Loading...</p>;
     }
-    
     return (
       <div className="App">
+      <Navbar />,
       <form>
         <input type="text" className="input is-primary"
           onChange={this.searchHandler}
@@ -66,8 +67,10 @@ componentDidMount(){
           placeholder="Search for user by name"
         />
       </form>
+      
        <ul>
         {users.filter(searchingFor(this.state.term)).map(user =>
+        <div className="box">
           <li key={user.id}>
               <h2 className="title is-3">User {user.id}:</h2>
               <h3 className="subtitle"><strong>Name:</strong> {user.first_name} <br></br>
@@ -76,6 +79,7 @@ componentDidMount(){
                 <img alt="avatar" className="is-rounded" src={user.avatar}></img>
               </figure>
           </li>
+        </div>
         )}
       </ul>
       </div>
