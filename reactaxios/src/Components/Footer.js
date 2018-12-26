@@ -6,11 +6,12 @@ import 'bulma/css/bulma.css';
   render() { 
     return (
      <div>
-       <footer className="footer">
+<footer className="footer">
   <div className="content has-text-centered">
     <p>
-      <strong>React</strong> by <a href="https://github.com/LaurynasNaujokas/React-axios">Laurynas</a>. Just for fun and educational purposes
-      <a href="https://github.com/LaurynasNaujokas/React-axios">  MIT</a>. The website content
+      <strong>React</strong> by <a href="https://github.com/LaurynasNaujokas/React-axios">Laurynas</a>.
+       Just for fun and educational purposes
+        <a href="https://github.com/LaurynasNaujokas/React-axios"> MIT</a>. The website content
       is made for fun <a href="https://github.com/LaurynasNaujokas/React-axios">2018 Denmark</a>.
     </p>
   </div>
