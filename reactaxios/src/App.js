@@ -94,7 +94,6 @@ componentDidMount(){
         )}
       </ul>
 
-
           {/* Footer component */}
       <div className="footer-component">
         <Footer />
