@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import 'bulma/css/bulma.css';
 
-
- class Footer extends Component {
+ export default class Footer extends Component {
 
   render() { 
     return (
@@ -21,4 +20,3 @@ import 'bulma/css/bulma.css';
     }
 }
 
-export default Footer;
