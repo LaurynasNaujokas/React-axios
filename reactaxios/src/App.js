@@ -77,7 +77,6 @@ componentDidMount(){
         />
       </form>
       
-
     {/* //Filtering and displaying fetcehd information */}
        <ul>
         {users.filter(searchingFor(this.state.term)).map(user =>
@@ -94,7 +93,7 @@ componentDidMount(){
         )}
       </ul>
 
-          {/* Footer component */}
+     
       <div className="footer-component">
         <Footer />
       </div>
